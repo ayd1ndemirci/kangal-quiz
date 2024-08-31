@@ -46,7 +46,7 @@ export default function App() {
         <h1 className="open-source"><a href="https://github.com/ayd1ndemirci/kangal-quiz" target="blank">Site Kodları İçin Tıkla</a></h1>
         <h2>Soru {currentIndex + 1} / {list.length}</h2> <br></br>
         <img
-          src={`http://localhost:3000/fotos/${currentItem.path}`}
+          src={`https://kangal-quiz.vercel.app/fotos/${currentItem.path}`}
           alt="current"
           style={{ width: "300px", height: "300px" }}
         />
