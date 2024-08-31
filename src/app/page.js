@@ -1,95 +1,86 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client";
+import React, { useState } from "react";
+import list from "./list.json";
+import './App.css'; // CSS dosyasını import edin
 
-export default function Home() {
+export default function App() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [selectedGroup, setSelectedGroup] = useState("");
+  const [feedback, setFeedback] = useState("");
+  const [disabledGroups, setDisabledGroups] = useState([]);
+  const [correctCount, setCorrectCount] = useState(0);
+  const [incorrectCount, setIncorrectCount] = useState(0);
+
+  const currentItem = list[currentIndex];
+
+  const handleGroupClick = (group) => {
+    if (feedback) return; // Seçim yapıldıysa işleme
+
+    setSelectedGroup(group);
+    if (group === currentItem.correctgroup) {
+      setFeedback("correct");
+      setCorrectCount(correctCount + 1); // Doğru sayısını artır
+    } else {
+      setFeedback("incorrect");
+      setIncorrectCount(incorrectCount + 1); // Yanlış sayısını artır
+      setDisabledGroups([currentItem.correctgroup]); // Yanlış seçilen seçeneği değil, sadece doğru seçeneği devre dışı bırak
+    }
+  };
+
+  const nextItem = () => {
+    if (currentIndex < list.length - 1) {
+      setCurrentIndex(currentIndex + 1);
+      setSelectedGroup("");
+      setFeedback("");
+      setDisabledGroups([]); // Yeni soruya geçerken seçenekleri aktif hale getir
+    }
+  };
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+    <div className="App">
+      <div className="card">
+      <h1 className="text-dikkat">DİKKAT</h1>
+        <h3 className="text-description">Bu site tamamen mizah amaçlı yapılmıştır.</h3>
+        <h3 className="text-description-continue">Kişilerin örgütler ile herhangi bir ilgisi bulunmamaktadır</h3>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+        <h1 className="open-source"><a href="https://github.com/ayd1ndemirci/kangal-quiz" target="blank">Site Kodları İçin Tıkla</a></h1>
+        <h2>Soru {currentIndex + 1} / {list.length}</h2> <br></br>
+        <img
+          src={`http://localhost:3000/fotos/${currentItem.path}`}
+          alt="current"
+          style={{ width: "300px", height: "300px" }}
         />
+        <div className="buttons">
+          {currentItem.groups.map((group, index) => (
+            <button
+              key={index}
+              onClick={() => handleGroupClick(group)}
+              className={`group-button ${feedback === "correct" && group === currentItem.correctgroup
+                  ? "correct"
+                  : feedback === "incorrect" && group === selectedGroup
+                    ? "incorrect"
+                    : feedback === "incorrect" && group === currentItem.correctgroup
+                      ? "correct"
+                      : ""
+                }`}
+              disabled={feedback && !disabledGroups.includes(group)} // Yanlış seçilen seçeneği değil, sadece doğru seçeneği devre dışı bırak
+            >
+              {group}
+            </button>
+          ))}
+        </div>
+        <div className="feedback-summary">
+          <p>Doğru Sayısı: {correctCount}</p>
+          <p>Yanlış Sayısı: {incorrectCount}</p>
+        </div>
+        {feedback && currentIndex < list.length - 1 && (
+          <button onClick={nextItem} className="next-button">İleri</button>
+        )}
       </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+      <h2 className="footer">
+      Made by <a href="https://github.com/ayd1ndemirci" target="blank">ayd1ndemirci</a> & <a href="https://github.com/seri4lize" target="blank">seri4lize</a>
+      </h2>
+      <h3 className="footer-bottom">Discord: <a href="https://discord.com/users/581450819224993803" target="blank">ayd1ndemirci</a> & <a href="https://discord.com/users/1198959852739899524" target="blank">seri4lize</a></h3>
+    </div>
   );
 }

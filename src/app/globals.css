@@ -86,6 +86,7 @@ body {
 }
 
 body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
@@ -93,6 +94,11 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 
 a {
@@ -105,3 +111,87 @@ a {
     color-scheme: dark;
   }
 }
+
+.group-button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: 2px solid #fff;
+  border-radius: var(--border-radius);
+  background-color: #e0e0e0c4;
+  transition: background-color 0.3s, transform 0.3s, box-shadow ease-in-out 0.3s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.group-button:hover {
+  background-color: #d5d5d5;
+  box-shadow: 6px 6px 15px 0px #000000;
+
+  transform: translateY(-2px);
+}
+
+
+.correct {
+  background-color: #4caf50;
+  color: white;
+}
+
+.incorrect {
+  background-color: #f44336;
+  color: white;
+}
+
+.next-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  border: none;
+  border-radius: var(--border-radius);
+  background-color: #2196f3;
+  color: white;
+  transition: background-color 0.3s, transform 0.3s, box-shadow ease-in-out 0.3s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.next-button:hover {
+  background-color: #1976d2;
+  box-shadow: 6px 6px 15px 0px #000000;
+  transform: translateY(-2px);
+}
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 10px;
+  margin-top: 20px;
+  width: 100%;
+  max-width: 500px; 
+}
+
+button {
+  width: 100%;
+}
+
+
+
+.group-button.correct {
+  background-color: green;
+  color: white;
+}
+
+.group-button.incorrect {
+  background-color: red;
+  color: white;
+}
+
+.group-button:disabled {
+  background-color: lightgray;
+  color: darkgray;
+  cursor: not-allowed;
+}
+.feedback-summary {
+  margin-top: 20px;
+  font-size: 16px;
+}
+

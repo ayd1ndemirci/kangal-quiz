@@ -1,0 +1,168 @@
+.App {
+  user-select: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+.card {
+  margin: 0px;
+  width: 350px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: hsl(0, 0%, 10%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--border-radius);
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  width: 100%;
+  max-width: 300px;
+  margin-top: 20px;
+}
+
+button {
+  width: 100%;
+}
+
+.next-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  border: none;
+  border-radius: var(--border-radius);
+  background-color: #2196f3;
+  color: white;
+  transition: background-color 0.3s, transform 0.3s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+.next-button:hover {
+  background-color: #1976d2;
+  transform: translateY(-2px);
+}
+
+.group-button {
+  /* Diğer stil ayarları */
+}
+
+.group-button.correct {
+  background-color: green;
+  color: white;
+}
+
+.group-button.incorrect {
+  background-color: red;
+  color: white;
+}
+
+.group-button.disabled {
+  background-color: lightgray;
+  color: darkgray;
+  cursor: not-allowed;
+}
+
+.text-dikkat {
+  position: relative;
+  left: -500px;
+  top: 200px;
+  width: 200px;
+  height: 0px;
+}
+
+.text-dikkat::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -40px;
+  width: 150px;
+  height: 3px;
+  background-color: red;
+  transform: translateX(-10%);
+}
+
+.text-description {
+  position: relative;
+  top: 250px;
+  left: -500px;
+  width: 300px;
+  height: 0px;
+}
+
+.text-description-continue {
+  position: relative;
+  top: 310px;
+  left: -500px;
+  width: 300px;
+  height: 0px;
+}
+
+.open-source {
+  position: relative;
+  top: 200px;
+  left: 500px;
+  width: 400px;
+  height: 10px;
+  transition: 0.5s ease-in-out;
+}
+
+.open-source:hover {
+  color: #1976d2;
+}
+.footer {
+  position: absolute;
+  display: block;
+  flex-direction: column;
+  z-index: 100;
+  bottom: 30px;
+  transition: ease-in-out 0.4s;
+}
+.footer-bottom {
+  position: absolute;
+  display: block;
+  flex-direction: column;
+  z-index: 100;
+  bottom: 10px;
+  transition: ease-in-out 0.4s;
+}
+.footer h2 {
+  bottom: 40px;
+}
+.footer a {
+  transition: ease-in-out 0.2s;
+  color: #1976d2;
+  font-style: italic;
+}
+.footer a:hover {
+  color: #717171;
+}
+.footer-bottom a {
+  transition: ease-in-out 0.2s;
+  color: #1976d2;
+  font-style: italic;
+}
+.footer-bottom a:hover {
+  color: #717171;
+}
+.footer-bottom h3 {
+  transform: translateX(15%);
+}

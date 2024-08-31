@@ -1,0 +1,152 @@
+[
+  {
+    "path": "daeş2k.png",
+    "id": 1,
+    "groups": ["PKK", "MLKP", "Hizbullah", "MKLP"],
+    "correctgroup": null
+  },
+  {
+    "path": "daeşkf.png",
+    "id": 2,
+    "groups": ["MLKP", "Sivil", "MKLP", "FETÖ"],
+    "correctgroup": null
+  },
+  {
+    "path": "daeşytb.png",
+    "id": 3,
+    "groups": ["DAEŞ", "Hizbullah", "MKLP", "Sivil"],
+    "correctgroup": null
+  },
+  {
+    "path": "eraysivil.png",
+    "id": 4,
+    "groups": ["Sivil", "MLKP", "El-Kaide", "PKK"],
+    "correctgroup": null
+  },
+  {
+    "path": "fetobone.png",
+    "id": 5,
+    "groups": ["FETÖ", "PKK", "MLKP", "Sivil"],
+    "correctgroup": null
+  },
+  {
+    "path": "fetöadil.png",
+    "id": 6,
+    "groups": ["Sivil", "FETÖ", "MKLP", "MLKP"],
+    "correctgroup": null
+  },
+  {
+    "path": "fetöebo.png",
+    "id": 7,
+    "groups": ["FETÖ", "Sivil", "MLKP", "DAEŞ"],
+    "correctgroup": null
+  },
+  {
+    "path": "fetöorder.png",
+    "id": 8,
+    "groups": ["Hizbullah", "FETÖ", "DAEŞ", "MKLP"],
+    "correctgroup": null
+  },
+  {
+    "path": "gitbaran.png",
+    "id": 9,
+    "groups": ["MKLP", "MLKP", "El-Kaide", "Sivil"],
+    "correctgroup": null
+  },
+  {
+    "path": "hizbullahemo.png",
+    "id": 10,
+    "groups": ["DAEŞ", "FETÖ", "MLKP", "MKLP"],
+    "correctgroup": null
+  },
+  {
+    "path": "mklpalixbet.png",
+    "id": 11,
+    "groups": ["DAEŞ", "FETÖ", "MLKP", "El-Kaide"],
+    "correctgroup": null
+  },
+  {
+    "path": "mlkpayberk.png",
+    "id": 12,
+    "groups": ["MLKP", "PKK", "MKLP", "Sivil"],
+    "correctgroup": null
+  },
+  {
+    "path": "pkkadil.png",
+    "id": 13,
+    "groups": ["DAEŞ", "Hizbullah", "MLKP", "Sivil"],
+    "correctgroup": null
+  },
+  {
+    "path": "pkkanil.png",
+    "id": 14,
+    "groups": ["MLKP", "Sivil", "El-Kaide", "PKK"],
+    "correctgroup": null
+  },
+  {
+    "path": "pkkapo.png",
+    "id": 15,
+    "groups": ["MLKP", "PKK", "Sivil", "DAEŞ"],
+    "correctgroup": null
+  },
+  {
+    "path": "pkkcalpser.png",
+    "id": 16,
+    "groups": ["MLKP", "Hizbullah", "El-Kaide", "PKK"],
+    "correctgroup": null
+  },
+  {
+    "path": "pkkf.png",
+    "id": 17,
+    "groups": ["Hizbullah", "Sivil", "PKK", "FETÖ"],
+    "correctgroup": null
+  },
+  {
+    "path": "pkkf2.png",
+    "id": 18,
+    "groups": ["MKLP", "PKK", "Sivil", "DAEŞ"],
+    "correctgroup": null
+  },
+  {
+    "path": "pkkseco.png",
+    "id": 19,
+    "groups": ["MLKP", "DAEŞ", "El-Kaide", "PKK"],
+    "correctgroup": null
+  },
+  {
+    "path": "pkkseco2.png",
+    "id": 20,
+    "groups": ["DAEŞ", "PKK", "Sivil", "El-Kaide"],
+    "correctgroup": null
+  },
+  {
+    "path": "sivil.png",
+    "id": 21,
+    "groups": ["MKLP", "FETÖ", "Sivil", "DAEŞ"],
+    "correctgroup": null
+  },
+  {
+    "path": "sivilebo.png",
+    "id": 22,
+    "groups": ["Hizbullah", "FETÖ", "Sivil", "PKK"],
+    "correctgroup": null
+  },
+  {
+    "path": "sivilkral.png",
+    "id": 23,
+    "groups": ["Hizbullah", "PKK", "MLKP", "DAEŞ"],
+    "correctgroup": null
+  },
+  {
+    "path": "sivilrami.png",
+    "id": 24,
+    "groups": ["MKLP", "FETÖ", "El-Kaide", "DAEŞ"],
+    "correctgroup": null
+  },
+  {
+    "path": "sivilstem.png",
+    "id": 25,
+    "groups": ["El-Kaide", "Sivil", "FETÖ", "MLKP"],
+    "correctgroup": null
+  }
+]
